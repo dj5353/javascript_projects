@@ -1,0 +1,88 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            StopWatch
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <style>
+            .box{
+                padding: 10px;
+                font-size: 80px;
+            }
+            .btn{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <main class = "container">
+                <div class = "box">
+                    
+                </div>
+                <button id = 'start' class = "btn btn-lg bg-success ">START</button>
+                <button id = 'stop' class = 'btn btn-lg bg-success' >STOP</button>
+                <button id = 'reset' class = 'btn btn-lg bg-success'>RESET</button>
+
+        </main>
+        <script>
+            let display_min = 0;
+            let displayHours = 0;
+            let displaysec = 0;
+
+
+
+            let start_btn = document.querySelector('#start');
+            let reset_btn = document.querySelector('#reset'); 
+            let stop_btn = document.querySelector('#stop');
+            let display = document.querySelector('div');
+
+
+
+
+            let setTime = function(){
+
+                    displaysec += 1;
+                    if(displaysec%60 == 0){
+                        display_min += 1
+                        displaysec = 0
+                    }
+                    if(display_min / 60 == 1){
+                        displayHours += 1
+                        display_min = 0
+
+                    }
+                    display.textContent = displayHours + ' : ' + display_min + ' : ' + displaysec;
+
+            }
+            
+           let interval;
+            start_btn.addEventListener('click',function(){
+                start_btn.disabled = true;
+                interval = setInterval(setTime,1000)
+
+            });
+
+            stop_btn.addEventListener('click',function(){
+                start_btn.disabled = false;
+                clearInterval(interval);
+            });
+
+            reset_btn.addEventListener('click',function(){
+                start_btn.disabled = false;
+                clearInterval(interval);
+                displayHours = 0; 
+                display_min = 0;
+                displaysec = 0;
+                display.textContent = displayHours + ' : ' + display_min + ' : ' + displaysec;
+            });
+
+
+
+
+        </script>
+
+
+    </body>
+</html>
