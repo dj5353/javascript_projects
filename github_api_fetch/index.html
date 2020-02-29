@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        #profile{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat((4,1fr));
+            grid-gap : 1rem;
+        
+        }
+        .my-container{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="container my-container">
+        <button class = "btn btn-lg btn-primary" id = "prev_btn" disabled="true">PREV</button>
+        <button class = "btn btn-lg btn-primary" id = "btn" >GETDATA</button>
+        <button class = "btn btn-lg btn-primary" id = "net" disabled = "true">NEXT</button>
+    </header>
+    <main id = "profile">
+    </main>
+    <script src= "index.js">   
+    </script>
+</body>
+</html>
+
+
+
+
+
